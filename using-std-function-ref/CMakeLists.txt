@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.5)
 project(UsingStdFunctionRef)
 
 include(FetchContent)
+
 FetchContent_Declare(
   nontype_functional
   GIT_REPOSITORY https://github.com/zhihaoy/nontype_functional

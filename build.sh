@@ -55,3 +55,11 @@ cmake ..
 cmake --build .
 ./output
 cd ../..
+
+cd benchmarks
+mkdir -p build
+cd build
+cmake ..
+cmake --build .
+./output
+cd ../..
