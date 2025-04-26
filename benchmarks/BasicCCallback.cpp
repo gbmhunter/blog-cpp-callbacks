@@ -19,3 +19,4 @@ static void basicCallback(benchmark::State& state) {
     }
 }
 BENCHMARK(basicCallback);
+
