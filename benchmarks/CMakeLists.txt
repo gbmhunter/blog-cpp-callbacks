@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
 enable_testing()
+
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 
 # Set the project name
@@ -31,7 +33,7 @@ FetchContent_MakeAvailable(
         nontype_functional)
 
 # Add the executable
-add_executable(Benchmarks main.cpp)
+add_executable(Benchmarks main.cpp BasicCCallback.cpp StdFunctionRef.cpp)
 
 # find_package(nontype_functional CONFIG REQUIRED)
 target_link_libraries(Benchmarks PRIVATE std23::nontype_functional benchmark::benchmark)
