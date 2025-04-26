@@ -33,8 +33,7 @@ FetchContent_MakeAvailable(
         nontype_functional)
 
 # Add the executable
-file(GLOB BENCHMARK_SOURCES "*.cpp")
-add_executable(Benchmarks ${BENCHMARK_SOURCES})
+add_executable(Benchmarks main.cpp BasicCCallback.cpp CallingMemberThroughStandardCFunction.cpp StdFunctionRef.cpp StdFunctionWithLambdas.cpp StdFunctionWithBind.cpp)
 
 # find_package(nontype_functional CONFIG REQUIRED)
 target_link_libraries(Benchmarks PRIVATE std23::nontype_functional benchmark::benchmark)

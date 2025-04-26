@@ -32,7 +32,7 @@ cmake --build .
 ./output
 cd ../..
 
-cd using-std-function-with-std-bind
+cd std-function-with-std-bind
 mkdir -p build
 cd build
 cmake ..
@@ -40,7 +40,7 @@ cmake --build .
 ./output
 cd ../..
 
-cd using-std-function-with-lambdas
+cd std-function-with-lambdas
 mkdir -p build
 cd build
 cmake ..
