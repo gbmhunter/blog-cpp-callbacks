@@ -48,6 +48,14 @@ cmake --build .
 ./output
 cd ../..
 
+cd templates
+mkdir -p build
+cd build
+cmake ..
+cmake --build .
+./output
+cd ../..
+
 cd using-std-function-ref
 mkdir -p build
 cd build

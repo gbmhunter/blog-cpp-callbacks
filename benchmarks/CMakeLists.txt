@@ -33,7 +33,15 @@ FetchContent_MakeAvailable(
         nontype_functional)
 
 # Add the executable
-add_executable(Benchmarks main.cpp BasicCCallback.cpp CallingMemberThroughStandardCFunction.cpp StdFunctionRef.cpp StdFunctionWithLambdas.cpp StdFunctionWithBind.cpp)
+add_executable(Benchmarks 
+  main.cpp
+  BasicCCallback.cpp 
+  CallingMemberThroughStandardCFunction.cpp 
+  StaticVariablesWithTemplating.cpp
+  StdFunctionRef.cpp 
+  StdFunctionWithLambdas.cpp 
+  StdFunctionWithBind.cpp
+  Templates.cpp)
 
 # find_package(nontype_functional CONFIG REQUIRED)
 target_link_libraries(Benchmarks PRIVATE std23::nontype_functional benchmark::benchmark)

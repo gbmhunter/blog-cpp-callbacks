@@ -1,10 +1,6 @@
 #include <cstdio>
-#include <functional>
 
 #include <std23/function_ref.h>
-
-using std23::function_ref;
-using std23::nontype;
 
 class MyClass {
 public:
@@ -13,7 +9,7 @@ public:
       }
 };
 
-void passACallbackToMe(function_ref<int(int, int)> callback) {
+void passACallbackToMe(std23::function_ref<int(int, int)> callback) {
     int o = callback(1, 2);
     printf("Value: %i\n", o); // We might be on an embedded system, use printf() and not std::cout
 }
@@ -21,5 +17,5 @@ void passACallbackToMe(function_ref<int(int, int)> callback) {
 int main()
 {
     MyClass myClass;
-    passACallbackToMe({nontype<&MyClass::methodToCallback>, myClass});
+    passACallbackToMe({std23::nontype<&MyClass::methodToCallback>, myClass});
 }
