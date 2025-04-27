@@ -16,6 +16,14 @@ cmake --build .
 ./output
 cd ../..
 
+cd callback-interface-using-inheritance
+mkdir -p build
+cd build
+cmake ..
+cmake --build .
+./output
+cd ../..
+
 cd calling-member-functions-through-shared-variables
 mkdir -p build
 cd build
@@ -48,7 +56,7 @@ cmake --build .
 ./output
 cd ../..
 
-cd templates
+cd templating-the-member-function-and-instance
 mkdir -p build
 cd build
 cmake ..

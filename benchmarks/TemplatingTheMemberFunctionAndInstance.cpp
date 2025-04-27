@@ -23,11 +23,11 @@ private:
     uint64_t y = 0;
 };
 
-static void templates(benchmark::State& state) {
+static void templatingTheMemberFunctionAndInstance(benchmark::State& state) {
     MyClass myClass;
     LibraryClass libraryClass;
     for (auto _ : state) {
         libraryClass.passACallbackToMe(&MyClass::methodToCallback, myClass);
     }
 }
-BENCHMARK(templates);
+BENCHMARK(templatingTheMemberFunctionAndInstance);
