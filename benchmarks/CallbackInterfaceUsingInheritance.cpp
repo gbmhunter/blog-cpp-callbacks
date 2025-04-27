@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <functional>
 
 #include <benchmark/benchmark.h>
 
@@ -11,6 +10,12 @@ public:
     virtual int methodToCallback(int num1, int num2) = 0;
 };
 
+// If total is defined in the LibraryClass, it is optimized out (0ns runtime).
+// So define these on the heap.
+static int x = 0;
+static int y = 0;
+static int total = 0;
+
 class LibraryClass {
 public:
     LibraryClass(CallbackInterface* callback) : callback(callback) {}
@@ -18,9 +23,6 @@ public:
         // Call the callback function
         total += callback->methodToCallback(x++, y++);
     }
-    int x = 0;
-    int y = 0;
-    int total = 0;
 private:
     CallbackInterface* callback;
 };
