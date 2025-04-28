@@ -3,6 +3,9 @@
 
 #include <benchmark/benchmark.h>
 
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
+
 class MyClass {
 public:
       int methodToCallback(int num1, int num2) {
@@ -28,6 +31,9 @@ static void templatingTheMemberFunctionAndInstance(benchmark::State& state) {
     LibraryClass libraryClass;
     for (auto _ : state) {
         libraryClass.passACallbackToMe(&MyClass::methodToCallback, myClass);
+        // benchmark::ClobberMemory();
     }
 }
 BENCHMARK(templatingTheMemberFunctionAndInstance);
+
+#pragma GCC pop_options

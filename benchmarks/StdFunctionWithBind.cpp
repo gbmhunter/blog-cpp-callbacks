@@ -19,6 +19,7 @@ static void stdFunctionWithBind(benchmark::State& state) {
     uint64_t y = 0;
     for (auto _ : state) {
         total += callback(x++, y++);
+        // benchmark::ClobberMemory();
     }
 }
 BENCHMARK(stdFunctionWithBind);

@@ -25,6 +25,7 @@ static void callingMemberThroughStandardCFunction(benchmark::State& state) {
     uint64_t y = 0;
     for (auto _ : state) {
         total += standardCFunction(x++, y++);
+        // benchmark::ClobberMemory();
     }
 }
 BENCHMARK(callingMemberThroughStandardCFunction);

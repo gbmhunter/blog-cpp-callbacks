@@ -78,4 +78,5 @@ cd build
 cmake ..
 cmake --build .
 ./output
+./output_no_opt
 cd ../..

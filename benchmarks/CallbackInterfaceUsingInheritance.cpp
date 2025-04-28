@@ -22,6 +22,7 @@ public:
     void run() {
         // Call the callback function
         total += callback->methodToCallback(x++, y++);
+        // benchmark::ClobberMemory
     }
 private:
     CallbackInterface* callback;

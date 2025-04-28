@@ -40,6 +40,7 @@ static void staticVariablesWithTemplating(benchmark::State& state) {
     // Now we can pass this function to a C API which just wants a standard function callback    
     for (auto _ : state) {
         c_function_which_wants_callback(func);
+      //   benchmark::ClobberMemory();
     }
 }
 
