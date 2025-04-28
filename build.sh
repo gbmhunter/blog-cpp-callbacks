@@ -77,6 +77,7 @@ mkdir -p build
 cd build
 cmake ..
 cmake --build .
-./output
-./output_no_opt
+# Run the benchmarks and save the output to a JSON file
+./output_opt --benchmark_out=output_opt.json --benchmark_out_format=json
+./output_no_opt --benchmark_out=output_no_opt.json --benchmark_out_format=json
 cd ../..

@@ -42,9 +42,9 @@ set(BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS
 
 
 # Add the executable
-add_executable(Benchmarks ${BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS} StdFunctionRef.cpp)
-target_link_libraries(Benchmarks PRIVATE std23::nontype_functional benchmark::benchmark)
-set_target_properties(Benchmarks PROPERTIES OUTPUT_NAME "output")
+add_executable(Benchmarks_Opt ${BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS} StdFunctionRef.cpp)
+target_link_libraries(Benchmarks_Opt PRIVATE std23::nontype_functional benchmark::benchmark)
+set_target_properties(Benchmarks_Opt PROPERTIES OUTPUT_NAME "output_opt")
 
 # Create non-optimized version of the executable
 add_executable(Benchmarks_NoOpt ${BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS})
