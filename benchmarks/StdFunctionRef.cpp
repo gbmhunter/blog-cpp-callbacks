@@ -29,7 +29,7 @@ private:
 
 static void stdFunctionRef(benchmark::State& state) {
     MyClass myClass;
-    std23::function_ref<int(int, int)> callback = {std23::nontype<&MyClass::methodToCallback>, myClass};
+    std23::function_ref<int(int, int)> callback = {std23::nontype<&MyClass::methodToCallback>, &myClass};
     LibraryClass libraryClass(callback);
     for (auto _ : state) {
         libraryClass.run();

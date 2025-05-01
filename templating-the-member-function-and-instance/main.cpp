@@ -6,6 +6,7 @@ public:
     LibraryClass(T callback, U& instance) : callback(callback), instance(instance) {}
 
     void run() {
+        // Take the instance and call it's member function
         (instance.*callback)(1, 2);
     }
 private:
