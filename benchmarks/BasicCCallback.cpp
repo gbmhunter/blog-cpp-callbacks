@@ -1,5 +1,7 @@
 #include <benchmark/benchmark.h>
 
+namespace {
+
 static uint64_t total = 0;
 
 int callback(int num1, int num2) {
@@ -15,3 +17,5 @@ static void basicCCallback(benchmark::State& state) {
     }
 }
 BENCHMARK(basicCCallback);
+
+} // namespace

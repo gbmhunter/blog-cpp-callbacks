@@ -4,6 +4,8 @@
 #include <std23/function_ref.h>
 #include <benchmark/benchmark.h>
 
+namespace {
+
 class MyClass {
 public:
     int methodToCallback(int num1, int num2) {
@@ -37,3 +39,5 @@ static void stdFunctionRef(benchmark::State& state) {
 }
 // Register the function as a benchmark
 BENCHMARK(stdFunctionRef);
+
+} // namespace

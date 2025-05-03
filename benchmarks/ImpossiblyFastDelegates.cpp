@@ -4,6 +4,8 @@
 
 #include "ImpossiblyFastDelegates.hpp"
 
+namespace {
+
 class MyClass {
 public:
       int methodToCallback(int num1, int num2) {
@@ -24,3 +26,5 @@ static void impossiblyFastDelegates(benchmark::State& state) {
     }
 }
 BENCHMARK(impossiblyFastDelegates);
+
+} // namespace

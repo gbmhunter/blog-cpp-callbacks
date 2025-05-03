@@ -3,6 +3,8 @@
 #include <benchmark/benchmark.h>
 #include <function2/function2.hpp>
 
+namespace {
+
 class MyClass {
 public:
       int methodToCallback(int num1, int num2) {
@@ -25,3 +27,5 @@ static void naiosFunction2WithLambdas(benchmark::State& state) {
     }
 }
 BENCHMARK(naiosFunction2WithLambdas);
+
+} // namespace

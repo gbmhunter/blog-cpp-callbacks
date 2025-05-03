@@ -37,11 +37,12 @@ FetchContent_MakeAvailable(
     naios_function2)
 
 # Define all benchmark source files
-set(BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS
+set(BENCHMARK_SOURCES
     main.cpp
     BasicCCallback.cpp
     CallbackInterfaceUsingInheritance.cpp
     CallingMemberThroughStandardCFunction.cpp
+    StdFunctionRef.cpp
     StdFunctionWithLambdas.cpp 
     StdFunctionWithBind.cpp
     TemplatingTheMemberFunctionAndInstance.cpp
@@ -49,13 +50,13 @@ set(BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS
     ImpossiblyFastDelegates.cpp)
 
 # Create non-optimized version of the executable
-add_executable(Benchmarks_NoOpt ${BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS})
+add_executable(Benchmarks_NoOpt ${BENCHMARK_SOURCES})
 target_compile_options(Benchmarks_NoOpt PRIVATE "-O0")
 target_link_libraries(Benchmarks_NoOpt PRIVATE std23::nontype_functional benchmark::benchmark function2)
 set_target_properties(Benchmarks_NoOpt PROPERTIES OUTPUT_NAME "output_no_opt")
 
 # Create optimized version of the executable
-add_executable(Benchmarks_Opt ${BENCHMARK_SOURCES_THAT_WORK_ON_ALL_COMPILERS} StdFunctionRef.cpp)
+add_executable(Benchmarks_Opt ${BENCHMARK_SOURCES})
 target_compile_options(Benchmarks_Opt PRIVATE "-O3")
 target_link_libraries(Benchmarks_Opt PRIVATE std23::nontype_functional benchmark::benchmark function2)
 set_target_properties(Benchmarks_Opt PROPERTIES OUTPUT_NAME "output_opt")

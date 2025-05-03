@@ -2,6 +2,8 @@
 
 #include <benchmark/benchmark.h>
 
+namespace {
+
 /**
  * This defines the interface of the "callbackable" class.
  */
@@ -47,3 +49,5 @@ static void callbackInterfaceUsingInheritance(benchmark::State& state) {
 }
 // Register the function as a benchmark
 BENCHMARK(callbackInterfaceUsingInheritance);
+
+} // namespace
